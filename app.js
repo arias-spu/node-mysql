@@ -6,15 +6,15 @@ var mysql=require('mysql');
 
 var connection=mysql.createConnection({
 	host: "localhost",
-	user: "rob",
-	password: "Drax1999!",
-	database: "rob"
+	user: "dbuser",
+	password: "csc3221!",
+	database: "employees"
 });
 
 connection.connect(function(err){
 	if (err) throw err;
 	console.log("Connected!");
-	connection.query("SELECT * FROM Question LIMIT 5", function(err, result, fields){
+	connection.query("SELECT * FROM employees LIMIT 5", function(err, result, fields){
 		if (err) throw err;
 		console.log(result);
 
